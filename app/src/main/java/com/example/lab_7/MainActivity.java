@@ -15,19 +15,21 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    static ArrayList addUrl = new ArrayList<String>();;
+    static  Intent i;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final ListView listView = findViewById(R.id.listView);
 
-        Intent i = getIntent();
-        i.getType();
-        String action = i.getAction();
-        String type = i.getType();
+        i = getIntent();
+        //i.getType();
+        // String action = i.getAction();
+        //String type = i.getType();
         String data = i.getStringExtra(Intent.EXTRA_TEXT);
 
-        final ArrayList addUrl = new ArrayList<String>();
         if (data == null) {
             addUrl.add("");
         } else {
